@@ -1,0 +1,111 @@
+1a. 
+                               50
+                            /      \
+                         20         60
+                       /   \          \
+                    10      40         70
+                      \     /         /   \
+                       15  30       65     80
+                          /  \            /
+                         25   36        74        
+
+
+b. 
+In-Order:
+10, 15, 20, 25, 30, 36, 40, 50, 60, 65, 70, 74, 80
+
+
+Pre-Order:
+50, 20, 10, 15, 40, 30, 25, 36, 60, 70, 65, 80, 74
+
+
+Post-Order:
+15, 10, 25, 36, 30, 40, 20, 65, 74, 80, 70, 60, 50
+
+
+c. 
+After deleting 30: 
+                               50
+                            /      \
+                         20         60
+                       /   \          \
+                    10      40         70
+                      \     /         /   \
+                       15  25       65     80
+                             \            /
+                              36        74    
+
+After deleting 20:
+                               50
+                            /      \
+                         25         60
+                       /   \          \
+                    10      40         70
+                      \     /         /   \
+                       15  36       65     80
+                                          /
+                                        74                 
+
+
+2a.
+struct BinaryTreeNode   
+{
+        BinaryTreeNode(Node* parent, int value)
+        : m_value(value), m_parent(parent), m_left(nullptr), m_right(nullptr)
+        { }
+        int m_value;
+        Node* m_parent;
+        Node* m_left;
+        Node* m_right;
+};
+
+
+b. 
+void insert(BinaryTreeNode* curr, int value,)
+{
+        if root pointer is a nullptr
+                Allocate a new node with its value and have root point to the new node and 
+                Set the new node’s parent pointer to nullptr and set left & right pointer to nullptr and return 
+Otherwise, set curr pointer to point at the root
+        While we are not done…
+                If the value is equal to current node’s value. We are done, return and do nothing
+                If the value is less than the current node’s value
+                        If there is a left child, then go left
+                        Else allocate a new node with its value and
+                                Set the current node’s left pointer to the new node and
+Set the new node’s parent pointer to the current node and 
+Set its left and right pointers to nullptr and return
+                If the value is greater than the current node’s value
+                        If there is a right child, then go right
+                        Else allocate a new node with its value and 
+                                Set current node’s right pointer to the new node and
+                                Set the new node’s parent pointer to the current node and
+                                Set its left and right pointers to nullptr and return
+}
+
+
+3a.
+                                8
+                             /     \
+                            3        6
+			  /   \     / 
+			 0     2   4
+
+
+b. 
+front  [  8  |  3  |  6  |  0  |  2  |  4  ]  end
+
+
+c. 
+front  [  6  |  3  |  4  |  0  |  2  ]  end 
+
+
+4.
+1. O(C + S)
+2. O(log(C) + S)
+3. O(log(C) + log(S))
+4. O(1 + log(S)) = O(log(S))
+5. O(1)
+6. O(log(C) + S)
+7. O(S)
+8. O(C*log(S))
